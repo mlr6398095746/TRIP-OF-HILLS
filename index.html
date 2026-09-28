@@ -1,0 +1,893 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Trip of Hills | Trekking & Travel</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #222;
+      line-height: 1.6;
+      background: #f7f9f8;
+    }
+
+    /* NAVBAR */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: white;
+      font-size: 23px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #65d6a1;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 22px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    nav ul li a:hover {
+      color: #65d6a1;
+    }
+
+    .lang-btn {
+      border: 1px solid white;
+      background: transparent;
+      color: white;
+      padding: 7px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    /* HERO */
+    .hero {
+      height: 100vh;
+      min-height: 600px;
+      background:
+        linear-gradient(rgba(0,0,0,.48), rgba(0,0,0,.55)),
+        url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 78px);
+      margin-bottom: 10px;
+    }
+
+    .hero h1 span {
+      color: #65d6a1;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 25px;
+      background: #65d6a1;
+      color: #06251a;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      margin: 5px;
+      transition: .3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      opacity: .9;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+
+    /* GENERAL */
+    section {
+      padding: 80px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 35px;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #666;
+    }
+
+    /* ABOUT */
+    .about {
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      border-radius: 18px;
+    }
+
+    .about-text h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .about-text p {
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    /* SERVICES */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px 22px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,.07);
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .icon {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #666;
+    }
+
+    /* PACKAGES */
+    .packages {
+      background: #eef5f1;
+    }
+
+    .package-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,.07);
+    }
+
+    .package-card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+
+    .package-content {
+      padding: 20px;
+    }
+
+    .package-content h3 {
+      margin-bottom: 8px;
+    }
+
+    .package-content p {
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+      color: #087a52;
+      margin-bottom: 12px;
+    }
+
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: .3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    /* CONTACT */
+    .contact {
+      background: #10251d;
+      color: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .contact-info p {
+      margin: 15px 0;
+      color: #d5ddd9;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 13px;
+      margin-bottom: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    form textarea {
+      height: 120px;
+      resize: vertical;
+    }
+
+    form button {
+      border: none;
+      cursor: pointer;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #07130f;
+      color: #aaa;
+      text-align: center;
+      padding: 22px;
+    }
+
+    /* WHATSAPP */
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #25d366;
+      color: white;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      font-size: 28px;
+      z-index: 2000;
+      box-shadow: 0 5px 20px rgba(0,0,0,.25);
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+
+      nav ul {
+        display: none;
+      }
+
+      .hero {
+        min-height: 650px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cards,
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery img {
+        height: 240px;
+      }
+
+      .section-title h2 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav>
+      <div class="logo">
+        Trip <span>of Hills</span>
+      </div>
+
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <button class="lang-btn" onclick="changeLanguage()">
+        हिंदी
+      </button>
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+
+      <h1>Trip <span>of Hills</span></h1>
+
+      <p id="heroText">
+        Explore the mountains. Experience the journey. Create memories.
+      </p>
+
+      <a href="#packages" class="btn" id="packageBtn">
+        Explore Packages
+      </a>
+
+      <a href="#contact" class="btn btn-outline" id="contactBtn">
+        Contact Us
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2 id="aboutTitle">About Trip of Hills</h2>
+        <p id="aboutSub">
+          Your journey, our responsibility.
+        </p>
+      </div>
+
+      <div class="about-grid">
+
+        <img
+          class="about-img"
+          src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=80"
+          alt="Mountain">
+
+        <div class="about-text">
+
+          <h3 id="aboutHeading">
+            Discover the beauty of the mountains
+          </h3>
+
+          <p id="aboutText1">
+            Trip of Hills is a travel and trekking company dedicated
+            to creating memorable mountain experiences.
+          </p>
+
+          <p id="aboutText2">
+            From exciting treks to relaxing trips, we help you
+            explore beautiful destinations safely and comfortably.
+          </p>
+
+          <a href="#contact" class="btn">
+            Start Your Journey
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SERVICES -->
+  <section id="services">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2 id="servicesTitle">Our Services</h2>
+        <p id="servicesSub">
+          Everything you need for your next adventure.
+        </p>
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="icon">🥾</div>
+          <h3 id="service1Title">Trekking</h3>
+          <p id="service1Text">
+            Exciting mountain treks for beginners and adventure lovers.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🏔️</div>
+          <h3 id="service2Title">Trips & Tours</h3>
+          <p id="service2Text">
+            Explore beautiful destinations with carefully planned trips.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🚌</div>
+          <h3 id="service3Title">Travel</h3>
+          <p id="service3Text">
+            Comfortable and memorable travel experiences.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PACKAGES -->
+  <section class="packages" id="packages">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Popular Packages</h2>
+        <p>Choose your next adventure.</p>
+      </div>
+
+      <div class="cards">
+
+        <div class="package-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1000&q=80"
+            alt="Trekking">
+
+          <div class="package-content">
+            <h3>Mountain Trek</h3>
+            <p>
+              Adventure-filled mountain trekking experience.
+            </p>
+
+            <div class="price">
+              Contact for Price
+            </div>
+
+            <a href="#contact" class="btn">
+              Book Now
+            </a>
+          </div>
+
+        </div>
+
+
+        <div class="package-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1000&q=80"
+            alt="Hills">
+
+          <div class="package-content">
+            <h3>Hills Trip</h3>
+            <p>
+              Relax, explore and enjoy beautiful hill destinations.
+            </p>
+
+            <div class="price">
+              Contact for Price
+            </div>
+
+            <a href="#contact" class="btn">
+              Book Now
+            </a>
+          </div>
+
+        </div>
+
+
+        <div class="package-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1486911278844-a81c5267e227?auto=format&fit=crop&w=1000&q=80"
+            alt="Travel">
+
+          <div class="package-content">
+            <h3>Adventure Trip</h3>
+            <p>
+              An exciting journey for adventure seekers.
+            </p>
+
+            <div class="price">
+              Contact for Price
+            </div>
+
+            <a href="#contact" class="btn">
+              Book Now
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- GALLERY -->
+  <section id="gallery">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Our Gallery</h2>
+        <p>Moments from the journey.</p>
+      </div>
+
+      <div class="gallery">
+
+        <img
+          src="https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=800&q=80"
+          alt="Hills">
+
+        <img
+          src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80"
+          alt="Mountains">
+
+        <img
+          src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=80"
+          alt="Trekking">
+
+        <img
+          src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80"
+          alt="Travel">
+
+        <img
+          src="https://images.unsplash.com/photo-1486911278844-a81c5267e227?auto=format&fit=crop&w=800&q=80"
+          alt="Adventure">
+
+        <img
+          src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=800&q=80"
+          alt="Trip">
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Contact Us</h2>
+        <p style="color:#ccd8d3;">
+          Plan your next journey with Trip of Hills.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-info">
+
+          <h3>Trip of Hills</h3>
+
+          <p>
+            📍 Sankari Mori Uttarakashi Dehradun, Uttarakhand, India
+          </p>
+
+          <p>
+            📞 +91 6398095746
+          </p>
+
+          <p>
+            📧 tripofhills6398@gmail.com
+          </p>
+
+          <p>
+            🏔️ Trekking • Travel • Trips
+          </p>
+
+        </div>
+
+
+        <form onsubmit="sendMessage(event)">
+
+          <input
+            type="text"
+            id="name"
+            placeholder="Your Name"
+            required>
+
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Phone Number"
+            required>
+
+          <textarea
+            id="message"
+            placeholder="Tell us about your trip..."
+            required></textarea>
+
+          <button class="btn" type="submit">
+            Send Enquiry
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Trip of Hills. All Rights Reserved.
+  </footer>
+
+
+  <!-- WHATSAPP BUTTON -->
+  <a
+    class="whatsapp"
+    href="https://wa.me/916398095746
+    target="_blank"
+    title="Chat on WhatsApp">
+    ☎
+  </a>
+
+
+  <script>
+
+    let hindi = false;
+
+    function changeLanguage() {
+
+      hindi = !hindi;
+
+      const button = document.querySelector(".lang-btn");
+
+      if (English) {hindi)
+
+        button.innerText = "English";
+
+        document.getElementById("heroText").innerText =
+          "पहाड़ों को जानिए, सफर का आनंद लीजिए और यादें बनाइए।";
+
+        document.getElementById("packageBtn").innerText =
+          "पैकेज देखें";
+
+        document.getElementById("contactBtn").innerText =
+          "संपर्क करें";
+
+        document.getElementById("aboutTitle").innerText =
+          "Trip of Hills के बारे में";
+
+        document.getElementById("aboutSub").innerText =
+          "आपका सफर, हमारी जिम्मेदारी।";
+
+        document.getElementById("aboutHeading").innerText =
+          "पहाड़ों की खूबसूरती को करीब से जानिए";
+
+        document.getElementById("aboutText1").innerText =
+          "Trip of Hills एक ट्रैवल और ट्रेकिंग कंपनी है, जो आपके लिए यादगार पहाड़ी अनुभव तैयार करती है।";
+
+        document.getElementById("aboutText2").innerText =
+          "रोमांचक ट्रेक से लेकर आरामदायक ट्रिप तक, हम आपको खूबसूरत जगहों को सुरक्षित और आरामदायक तरीके से explore करने में मदद करते हैं।";
+
+        document.getElementById("servicesTitle").innerText =
+          "हमारी सेवाएं";
+
+        document.getElementById("servicesSub").innerText =
+          "आपके अगले adventure के लिए जरूरी सभी सेवाएं।";
+
+        document.getElementById("service1Title").innerText =
+          "ट्रेकिंग";
+
+        document.getElementById("service1Text").innerText =
+          "शुरुआती लोगों और adventure lovers के लिए शानदार mountain treks।";
+
+        document.getElementById("service2Title").innerText =
+          "ट्रिप्स और टूर";
+
+        document.getElementById("service2Text").innerText =
+          "सुव्यवस्थित trips के साथ खूबसूरत destinations explore करें।";
+
+        document.getElementById("service3Title").innerText =
+          "ट्रैवल";
+
+        document.getElementById("service3Text").innerText =
+          "आरामदायक और यादगार travel experiences।";
+
+      } else {
+
+        button.innerText = "हिंदी";
+
+        document.getElementById("heroText").innerText =
+          "Explore the mountains. Experience the journey. Create memories.";
+
+        document.getElementById("packageBtn").innerText =
+          "Explore Packages";
+
+        document.getElementById("contactBtn").innerText =
+          "Contact Us";
+
+        document.getElementById("aboutTitle").innerText =
+          "About Trip of Hills";
+
+        document.getElementById("aboutSub").innerText =
+          "Your journey, our responsibility.";
+
+        document.getElementById("aboutHeading").innerText =
+          "Discover the beauty of the mountains";
+
+        document.getElementById("aboutText1").innerText =
+          "Trip of Hills is a travel and trekking company dedicated to creating memorable mountain experiences.";
+
+        document.getElementById("aboutText2").innerText =
+          "From exciting treks to relaxing trips, we help you explore beautiful destinations safely and comfortably.";
+
+        document.getElementById("servicesTitle").innerText =
+          "Our Services";
+
+        document.getElementById("servicesSub").innerText =
+          "Everything you need for your next adventure.";
+
+        document.getElementById("service1Title").innerText =
+          "Trekking";
+
+        document.getElementById("service1Text").innerText =
+          "Exciting mountain treks for beginners and adventure lovers.";
+
+        document.getElementById("service2Title").innerText =
+          "Trips & Tours";
+
+        document.getElementById("service2Text").innerText =
+          "Explore beautiful destinations with carefully planned trips.";
+
+        document.getElementById("service3Title").innerText =
+          "Travel";
+
+        document.getElementById("service3Text").innerText =
+          "Comfortable and memorable travel experiences.";
+
+      }
+    }
+
+
+    function sendMessage(event) {
+
+      event.preventDefault();
+
+      const name =
+        document.getElementById("name").value;
+
+      const phone =
+        document.getElementById("phone").value;
+
+      const message =
+        document.getElementById("message").value;
+
+      /*
+        IMPORTANT:
+        नीचे XXXXXXXXXX की जगह
+        अपना WhatsApp number डालें।
+      */
+
+      const whatsappNumber = https://wa.me/916398095746
+
+      const text =
+        `Hello Trip of Hills,%0A%0A` +
+        `Name: ${name}%0A` +
+        `Phone: ${phone}%0A` +
+        `Trip Details: ${message}`;
+
+      window.open(
+        `https://wa.me/${whatsappNumber}?text=${text}`,
+        "_blank"
+      );
+    }
+
+  </script>
+
+</body>
+</html>!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Hello, World!</title>
+</head>
+<body>
+  <h1>
+    Hello, World!
+  </h1>
+</body>
+</html>
