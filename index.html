@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Trip of Hills | Trekking & Travel</title>
+<title>Trip of Hills | Himalayan Trekking & Travel</title>
 
 <style>
+
+/* =========================
+   BASIC
+========================= */
+
 *{
   margin:0;
   padding:0;
@@ -15,30 +21,57 @@
 }
 
 body{
-  font-family:Arial,sans-serif;
+  font-family:Arial, sans-serif;
   background:#f5f8f6;
   color:#18352d;
-  line-height:1.6;
+  line-height:1.7;
 }
 
-/* NAVBAR */
+img{
+  max-width:100%;
+  display:block;
+}
+
+.container{
+  max-width:1150px;
+  margin:auto;
+}
+
+section{
+  padding:90px 20px;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
 header{
   position:fixed;
   top:0;
+  left:0;
   width:100%;
   z-index:1000;
-  background:rgba(5,35,28,.95);
-  backdrop-filter:blur(8px);
+
+  background:rgba(3,30,24,.96);
+  backdrop-filter:blur(12px);
+
+  border-bottom:1px solid rgba(255,255,255,.12);
 }
 
 nav{
-  max-width:1150px;
+  max-width:1200px;
   margin:auto;
-  padding:8px 18px;
+
+  min-height:78px;
+  padding:8px 20px;
+
   display:flex;
   justify-content:space-between;
   align-items:center;
 }
+
+/* LOGO */
 
 .logo{
   display:flex;
@@ -47,652 +80,1609 @@ nav{
 }
 
 .logo img{
-  width:125px;
+  width:145px;
   height:auto;
-  display:block;
+
+  object-fit:contain;
+
+  filter:
+    drop-shadow(0 3px 5px rgba(0,0,0,.45));
 }
 
 nav ul{
   display:flex;
   list-style:none;
-  gap:18px;
+  gap:25px;
 }
 
 nav ul a{
   color:white;
   text-decoration:none;
-  font-size:14px;
+  font-size:15px;
+  font-weight:600;
+
+  transition:.3s;
 }
 
 nav ul a:hover{
   color:#65d18c;
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
+
 .hero{
+
   min-height:100vh;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   text-align:center;
+
   color:white;
-  padding:100px 20px 50px;
+
+  padding:
+    130px 20px
+    80px;
+
+  position:relative;
 
   background:
-  linear-gradient(rgba(0,35,28,.52),rgba(0,20,16,.72)),
-  url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=85")
-  center/cover;
+    linear-gradient(
+      rgba(0,30,24,.55),
+      rgba(0,15,12,.78)
+    ),
+    url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=90")
+    center/cover no-repeat;
 }
 
 .hero-content{
-  max-width:800px;
+  max-width:900px;
+}
+
+.hero-badge{
+
+  display:inline-block;
+
+  padding:8px 18px;
+
+  border:1px solid rgba(255,255,255,.4);
+
+  border-radius:30px;
+
+  background:rgba(0,0,0,.2);
+
+  font-size:14px;
+
+  margin-bottom:20px;
 }
 
 .hero h1{
-  font-size:58px;
-  margin-bottom:15px;
+
+  font-size:70px;
+
+  line-height:1.1;
+
+  margin-bottom:20px;
+
+  text-shadow:
+    0 4px 15px rgba(0,0,0,.5);
 }
 
 .hero h1 span{
   color:#65d18c;
 }
 
-.hero p{
+.hero-description{
+
   font-size:20px;
-  margin-bottom:30px;
+
+  max-width:800px;
+
+  margin:
+    0 auto
+    30px;
+
+  color:#f1f8f5;
+}
+
+.hero-description strong{
+  color:#65d18c;
+}
+
+.hero-buttons{
+  margin-top:20px;
 }
 
 .btn{
+
   display:inline-block;
-  padding:12px 21px;
-  margin:5px;
+
+  padding:13px 25px;
+
+  margin:6px;
+
   border-radius:30px;
+
   background:#1fa463;
+
   color:white;
+
   text-decoration:none;
+
   font-weight:bold;
+
   border:none;
+
   cursor:pointer;
+
+  transition:.3s;
+
+  box-shadow:
+    0 6px 18px rgba(0,0,0,.2);
 }
 
 .btn:hover{
+
   background:#137d4b;
+
+  transform:translateY(-2px);
 }
 
 .btn-outline{
+
   background:transparent;
+
   border:1px solid white;
+
+  box-shadow:none;
 }
 
-/* GENERAL */
-section{
-  padding:80px 20px;
+.btn-outline:hover{
+  background:white;
+  color:#123c31;
 }
 
-.container{
-  max-width:1150px;
-  margin:auto;
+
+/* HERO STATS */
+
+.hero-stats{
+
+  margin-top:45px;
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:50px;
+
+  flex-wrap:wrap;
 }
+
+.hero-stat strong{
+
+  display:block;
+
+  font-size:25px;
+
+  color:#65d18c;
+}
+
+.hero-stat span{
+
+  font-size:13px;
+
+  color:#e4eee9;
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
 
 .section-title{
+
   text-align:center;
-  margin-bottom:45px;
+
+  margin-bottom:50px;
 }
 
 .section-title h2{
-  font-size:36px;
-  margin-bottom:8px;
+
+  font-size:38px;
+
+  margin-bottom:10px;
 }
 
 .section-title p{
+
   color:#60736c;
+
+  max-width:700px;
+
+  margin:auto;
 }
 
-/* ABOUT */
+
+/* =========================
+   ABOUT
+========================= */
+
 .about{
   background:white;
 }
 
 .about-grid{
+
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:50px;
+
   align-items:center;
 }
 
 .about-img{
+
   width:100%;
-  height:360px;
+
+  height:400px;
+
   object-fit:cover;
-  border-radius:20px;
+
+  border-radius:24px;
+
+  box-shadow:
+    0 15px 35px rgba(0,0,0,.15);
 }
 
 .about-text h3{
-  font-size:28px;
-  margin-bottom:15px;
+
+  font-size:31px;
+
+  margin-bottom:18px;
 }
 
 .about-text p{
-  margin-bottom:15px;
+
+  margin-bottom:17px;
+
   color:#566861;
+
+  font-size:16px;
 }
 
-/* SERVICES */
+.about-highlight{
+
+  margin:25px 0;
+
+  padding:20px;
+
+  background:#eef7f2;
+
+  border-left:
+    4px solid #1fa463;
+
+  border-radius:10px;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services{
+  background:#f5f8f6;
+}
+
 .cards{
+
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:24px;
 }
 
 .card{
+
   background:white;
-  padding:28px;
-  border-radius:18px;
+
+  padding:32px 25px;
+
+  border-radius:20px;
+
   text-align:center;
-  box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.07);
+
+  transition:.3s;
+}
+
+.card:hover{
+
+  transform:
+    translateY(-7px);
+
+  box-shadow:
+    0 15px 35px rgba(0,0,0,.12);
 }
 
 .icon{
-  font-size:42px;
+
+  font-size:45px;
+
+  margin-bottom:12px;
+}
+
+.card h3{
+
+  font-size:22px;
+
   margin-bottom:10px;
 }
 
-/* PACKAGES */
+.card p{
+
+  color:#63746d;
+}
+
+
+/* =========================
+   PACKAGES
+========================= */
+
 .packages{
+
   background:#eef5f1;
 }
 
 .package-card{
+
   background:white;
-  border-radius:18px;
+
+  border-radius:20px;
+
   overflow:hidden;
-  box-shadow:0 8px 25px rgba(0,0,0,.09);
-  transition:.25s;
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.09);
+
+  transition:.3s;
 }
 
 .package-card:hover{
-  transform:translateY(-5px);
+
+  transform:
+    translateY(-6px);
+
+  box-shadow:
+    0 15px 35px rgba(0,0,0,.14);
 }
 
-.package-card img{
+.package-card > img{
+
   width:100%;
-  height:210px;
+
+  height:220px;
+
+  object-fit:cover;
+}
+
+
+/* HAR KI DUN GALLERY */
+
+.trek-gallery{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:5px;
+
+  background:#eee;
+}
+
+.trek-gallery img{
+
+  width:100%;
+
+  height:145px;
+
   object-fit:cover;
 }
 
 .package-content{
-  padding:20px;
+
+  padding:22px;
 }
 
 .package-content h3{
+
   font-size:21px;
+
   margin-bottom:8px;
 }
 
 .package-content p{
+
   color:#61736c;
+
   margin-bottom:7px;
 }
 
 .price{
-  font-size:21px;
+
+  font-size:22px;
+
   font-weight:bold;
+
   color:#159257 !important;
-  margin-top:10px;
+
+  margin-top:12px;
 }
 
-/* CONTACT */
+
+/* =========================
+   CONTACT
+========================= */
+
 .contact{
+
   background:#092d25;
+
   color:white;
 }
 
 .contact-grid{
+
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:50px;
 }
 
 .contact-info h3{
-  font-size:28px;
-  margin-bottom:18px;
+
+  font-size:30px;
+
+  margin-bottom:20px;
 }
 
 .contact-info p{
+
   margin:12px 0;
+
+  color:#d7e6e0;
+}
+
+.contact-note{
+
+  margin-top:25px;
+
+  padding:20px;
+
+  background:
+    rgba(255,255,255,.07);
+
+  border-radius:12px;
+
   color:#d7e6e0;
 }
 
 form input,
 form textarea{
+
   width:100%;
-  padding:14px;
-  margin-bottom:13px;
+
+  padding:15px;
+
+  margin-bottom:14px;
+
   border:0;
+
   border-radius:10px;
+
   font-size:15px;
+
+  outline:none;
 }
 
 form textarea{
-  min-height:130px;
+
+  min-height:140px;
+
   resize:vertical;
 }
 
-/* WHATSAPP */
-.whatsapp{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  width:58px;
-  height:58px;
-  border-radius:50%;
-  background:#25D366;
-  color:white;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:27px;
-  text-decoration:none;
-  z-index:999;
+form input:focus,
+form textarea:focus{
+
+  box-shadow:
+    0 0 0 2px #65d18c;
 }
 
-/* FOOTER */
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp{
+
+  position:fixed;
+
+  right:20px;
+
+  bottom:20px;
+
+  width:60px;
+
+  height:60px;
+
+  border-radius:50%;
+
+  background:#25D366;
+
+  color:white;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  font-size:28px;
+
+  text-decoration:none;
+
+  z-index:999;
+
+  box-shadow:
+    0 5px 20px rgba(0,0,0,.25);
+
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+  0%{
+    box-shadow:
+      0 0 0 0 rgba(37,211,102,.6);
+  }
+
+  70%{
+    box-shadow:
+      0 0 0 15px rgba(37,211,102,0);
+  }
+
+  100%{
+    box-shadow:
+      0 0 0 0 rgba(37,211,102,0);
+  }
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
 footer{
+
   background:#061d18;
+
   color:#b9cbc5;
+
   text-align:center;
-  padding:22px;
+
+  padding:25px;
+
   font-size:14px;
 }
 
-/* MOBILE */
+
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width:800px){
 
   nav{
-    padding:7px 10px;
+
+    min-height:68px;
+
+    padding:
+      6px 10px;
   }
 
   .logo img{
-    width:105px;
+
+    width:120px;
   }
 
   nav ul{
-    gap:9px;
+
+    gap:10px;
   }
 
   nav ul a{
+
     font-size:11px;
   }
 
-  .hero h1{
-    font-size:42px;
+  .hero{
+
+    padding-top:120px;
   }
 
-  .hero p{
-    font-size:17px;
+  .hero h1{
+
+    font-size:46px;
+  }
+
+  .hero-description{
+
+    font-size:16px;
+  }
+
+  .hero-stats{
+
+    gap:25px;
   }
 
   .about-grid,
   .contact-grid{
+
     grid-template-columns:1fr;
   }
 
   .cards{
+
     grid-template-columns:1fr;
   }
 
   .about-img{
+
     height:280px;
   }
 
   .section-title h2{
+
     font-size:30px;
   }
+
+  section{
+
+    padding:70px 16px;
+  }
+
 }
+
+
+/* SMALL MOBILE */
+
+@media(max-width:450px){
+
+  .hero h1{
+
+    font-size:39px;
+  }
+
+  .logo img{
+
+    width:105px;
+  }
+
+  nav ul{
+
+    gap:7px;
+  }
+
+  nav ul a{
+
+    font-size:10px;
+  }
+
+  .hero-stat strong{
+
+    font-size:21px;
+  }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
-<!-- NAVBAR -->
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
 <header>
+
 <nav>
 
 <a href="#home" class="logo">
-  <img src="trip-of-hills-logo.png" alt="Trip of Hills Logo">
+
+<img
+src="trip-of-hills-logo.png"
+alt="Trip of Hills Logo">
+
 </a>
 
+
 <ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#packages">Packages</a></li>
-<li><a href="#contact">Contact</a></li>
+
+<li>
+<a href="#home">Home</a>
+</li>
+
+<li>
+<a href="#about">About</a>
+</li>
+
+<li>
+<a href="#packages">Packages</a>
+</li>
+
+<li>
+<a href="#contact">Contact</a>
+</li>
+
 </ul>
 
 </nav>
+
 </header>
 
 
-<!-- HOME -->
-<section class="hero" id="home">
+
+<!-- =========================
+     HOME
+========================= -->
+
+<section
+class="hero"
+id="home">
 
 <div class="hero-content">
 
-<h1>Trip <span>of Hills</span></h1>
 
-<p>
-Explore the mountains. Experience the journey. Create memories.
+<div class="hero-badge">
+
+🏔️ Explore Uttarakhand • Discover the Himalayas
+
+</div>
+
+
+<h1>
+
+Your Journey to the
+<span>Himalayas</span>
+Begins Here
+
+</h1>
+
+
+<p class="hero-description">
+
+At <strong>Trip of Hills</strong>, we believe that a trek is more
+than just walking through the mountains — it is about discovering
+yourself, experiencing nature, meeting new people and creating
+memories that stay with you forever.
+
+From peaceful Himalayan valleys and beautiful meadows to
+challenging high-altitude adventures, we help you experience the
+real beauty of Uttarakhand with comfortable planning,
+experienced support and unforgettable moments.
+
+<strong>
+Pack your bags, leave the ordinary behind and start your next
+mountain story with us.
+</strong>
+
 </p>
 
-<a href="#packages" class="btn">
-🏔️ View Packages
+
+<div class="hero-buttons">
+
+<a
+href="#packages"
+class="btn">
+
+🏔️ Explore Trek Packages
+
 </a>
+
 
 <a
 href="https://wa.me/916398095746?text=Hello%20Trip%20of%20Hills,%20I%20want%20to%20know%20about%20your%20trekking%20packages."
 target="_blank"
 class="btn btn-outline">
-💬 WhatsApp Us
+
+💬 Talk to Us on WhatsApp
+
 </a>
+
+</div>
+
+
+<div class="hero-stats">
+
+<div class="hero-stat">
+
+<strong>🏔️</strong>
+
+<span>Himalayan Adventures</span>
+
+</div>
+
+
+<div class="hero-stat">
+
+<strong>🥾</strong>
+
+<span>Beautiful Treks</span>
+
+</div>
+
+
+<div class="hero-stat">
+
+<strong>❤️</strong>
+
+<span>Memorable Experiences</span>
+
+</div>
+
+</div>
+
 
 </div>
 
 </section>
 
 
-<!-- ABOUT -->
-<section class="about" id="about">
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section
+class="about"
+id="about">
 
 <div class="container">
 
+
 <div class="section-title">
-<h2>About Trip of Hills</h2>
-<p>Your journey, our responsibility.</p>
+
+<h2>
+
+About Trip of Hills
+
+</h2>
+
+<p>
+
+Your journey, our responsibility.
+
+</p>
+
 </div>
+
 
 <div class="about-grid">
 
+
 <img
 class="about-img"
-src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=85"
-alt="Himalayan Mountains">
+src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=90"
+alt="Beautiful Himalayan Mountains">
+
 
 <div class="about-text">
 
-<h3>Discover the Beauty of the Mountains</h3>
+
+<h3>
+
+More Than a Trek — It's a Mountain Experience
+
+</h3>
+
 
 <p>
-Trip of Hills is a travel and trekking company dedicated to creating
-memorable mountain experiences.
+
+Welcome to <strong>Trip of Hills</strong>, your gateway to the
+beautiful mountains of Uttarakhand.
+
+We are passionate about creating meaningful trekking and travel
+experiences for people who want to escape the busy city life and
+experience the peace, beauty and adventure of the Himalayas.
+
 </p>
+
 
 <p>
-Explore beautiful Himalayan destinations, enjoy trekking adventures
-and create unforgettable memories.
+
+Whether you are planning your first Himalayan trek with friends,
+a family mountain trip, or a challenging adventure with experienced
+trekkers, our goal is to make your journey comfortable, memorable
+and enjoyable.
+
 </p>
 
-<a href="#packages" class="btn">
-Explore Packages
+
+<div class="about-highlight">
+
+<strong>
+🌄 Why travel with Trip of Hills?
+</strong>
+
+<br>
+
+Personal attention, beautiful destinations, adventure,
+memorable experiences and a team that genuinely cares about
+your journey.
+
+</div>
+
+
+<a
+href="#packages"
+class="btn">
+
+Explore Our Treks
+
 </a>
 
+
 </div>
+
 </div>
+
 </div>
+
 </section>
 
 
-<!-- SERVICES -->
-<section>
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section class="services">
 
 <div class="container">
 
+
 <div class="section-title">
-<h2>Our Services</h2>
-<p>Everything you need for your next adventure.</p>
+
+<h2>
+
+What We Offer
+
+</h2>
+
+<p>
+
+Everything you need for a memorable Himalayan adventure.
+
+</p>
+
 </div>
+
 
 <div class="cards">
 
-<div class="card">
-<div class="icon">🥾</div>
-<h3>Trekking</h3>
-<p>Explore beautiful Himalayan trekking destinations.</p>
-</div>
 
 <div class="card">
-<div class="icon">🏔️</div>
-<h3>Trips & Tours</h3>
-<p>Plan memorable mountain trips with your group.</p>
+
+<div class="icon">
+🥾
 </div>
+
+<h3>
+Trekking
+</h3>
+
+<p>
+
+Explore some of the most beautiful trekking destinations
+in Uttarakhand and experience the Himalayas up close.
+
+</p>
+
+</div>
+
 
 <div class="card">
-<div class="icon">🚐</div>
-<h3>Travel</h3>
-<p>Travel and explore beautiful destinations.</p>
+
+<div class="icon">
+🏔️
+</div>
+
+<h3>
+Trips & Tours
+</h3>
+
+<p>
+
+Plan an unforgettable mountain trip with your friends,
+family or group and create memories together.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+🚐
+</div>
+
+<h3>
+Travel Support
+</h3>
+
+<p>
+
+From travel planning to your mountain adventure,
+we help make your journey smoother and more enjoyable.
+
+</p>
+
+</div>
+
+
 </div>
 
 </div>
-</div>
+
 </section>
 
 
-<!-- PACKAGES -->
-<section class="packages" id="packages">
+
+<!-- =========================
+     PACKAGES
+========================= -->
+
+<section
+class="packages"
+id="packages">
 
 <div class="container">
 
+
 <div class="section-title">
-<h2>Our Trekking Packages</h2>
-<p>Choose your next Himalayan adventure.</p>
+
+<h2>
+
+Our Trekking Packages
+
+</h2>
+
+<p>
+
+Choose your next adventure and let the mountains become
+your next unforgettable story.
+
+</p>
+
 </div>
+
 
 <div class="cards">
 
 
 <!-- KEDARKANTHA -->
+
 <div class="package-card">
-<img src="https://images.unsplash.com/photo-1486911278844-a81c5267e227?auto=format&fit=crop&w=1000&q=85" alt="Kedarkantha Trek">
+
+<img
+src="https://images.unsplash.com/photo-1486911278844-a81c5267e227?auto=format&fit=crop&w=1200&q=90"
+alt="Kedarkantha Trek">
+
 
 <div class="package-content">
-<h3>🏔️ Kedarkantha Trek</h3>
-<p>Experience the beauty of the Himalayas.</p>
-<p class="price">₹9,000</p>
 
-<button class="btn" onclick="bookNow('Kedarkantha Trek','₹9,000')">
+<h3>
+🏔️ Kedarkantha Trek
+</h3>
+
+<p>
+
+Experience snow-covered Himalayan landscapes and enjoy
+one of Uttarakhand's most beautiful trekking adventures.
+
+</p>
+
+<p class="price">
+₹9,000
+</p>
+
+<button
+class="btn"
+onclick="bookNow('Kedarkantha Trek','₹9,000')">
+
 📲 Book Now
+
 </button>
+
 </div>
+
 </div>
+
 
 
 <!-- HAR KI DUN -->
+
 <div class="package-card">
- <div class="trek-gallery">
-  <img src="har-ki-dun-1.jpg" alt="Har Ki Dun Trek">
-  <img src="har-ki-dun-2.jpg" alt="Har Ki Dun Trek">
-  <img src="har-ki-dun-3.jpg" alt="Har Ki Dun Trek">
-  <img src="har-ki-dun-4.jpg" alt="Har Ki Dun Trek">
-  <img src="har-ki-dun-5.jpg" alt="Har Ki Dun Trek">
-  <img src="har-ki-dun-6.jpg" alt="Har Ki Dun Trek">
+
+
+<div class="trek-gallery">
+
+<img
+src="har-ki-dun-1.jpg"
+alt="Har Ki Dun Trek">
+
+<img
+src="har-ki-dun-2.jpg"
+alt="Har Ki Dun Trek">
+
+<img
+src="har-ki-dun-3.jpg"
+alt="Har Ki Dun Trek">
+
+<img
+src="har-ki-dun-4.jpg"
+alt="Har Ki Dun Trek">
+
+<img
+src="har-ki-dun-5.jpg"
+alt="Har Ki Dun Trek">
+
+<img
+src="har-ki-dun-6.jpg"
+alt="Har Ki Dun Trek">
+
 </div>
 
-<style>
-.trek-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
-
-.trek-gallery img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-</style>
 
 <div class="package-content">
-<h3>🏔️ Har Ki Dun Trek</h3>
-<p>Explore the beautiful Har Ki Dun valley.</p>
-<p class="price">₹11,000</p>
 
-<a href="har-ki-dun.html" class="btn">
-    📖 View Details
+<h3>
+🏔️ Har Ki Dun Trek
+</h3>
+
+<p>
+
+Walk through the stunning Har Ki Dun valley, surrounded by
+beautiful mountains, forests, villages and breathtaking
+Himalayan landscapes.
+
+</p>
+
+<p class="price">
+₹11,000
+</p>
+
+
+<a
+href="har-ki-dun.html"
+class="btn">
+
+📖 View Details
+
 </a>
+
+</div>
+
+</div>
+
 
 
 <!-- GULABI KANTHA -->
+
 <div class="package-card">
-<img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1000&q=85" alt="Gulabi Kantha Trek">
+
+<img
+src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=90"
+alt="Gulabi Kantha Trek">
+
 
 <div class="package-content">
-<h3>🌸 Gulabi Kantha Trek</h3>
-<p>Enjoy a beautiful Himalayan trekking experience.</p>
-<p class="price">₹9,000</p>
 
-<button class="btn" onclick="bookNow('Gulabi Kantha Trek','₹9,000')">
+<h3>
+🌸 Gulabi Kantha Trek
+</h3>
+
+<p>
+
+Enjoy peaceful mountain trails, beautiful landscapes and
+an unforgettable Himalayan trekking experience.
+
+</p>
+
+<p class="price">
+₹9,000
+</p>
+
+
+<button
+class="btn"
+onclick="bookNow('Gulabi Kantha Trek','₹9,000')">
+
 📲 Book Now
+
 </button>
+
 </div>
+
 </div>
+
 
 
 <!-- RANTHAN KHARAK -->
+
 <div class="package-card">
-<img src="https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1000&q=85" alt="Ranthan Kharak Trek">
+
+<img
+src="https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1200&q=90"
+alt="Ranthan Kharak Trek">
+
 
 <div class="package-content">
-<h3>🏔️ Ranthan Kharak Trek</h3>
-<p>Discover peaceful Himalayan landscapes.</p>
-<p class="price">₹12,000</p>
 
-<button class="btn" onclick="bookNow('Ranthan Kharak Trek','₹12,000')">
+<h3>
+🏔️ Ranthan Kharak Trek
+</h3>
+
+<p>
+
+Discover peaceful Himalayan landscapes and experience
+the beauty of nature away from the crowded tourist routes.
+
+</p>
+
+<p class="price">
+₹12,000
+</p>
+
+
+<button
+class="btn"
+onclick="bookNow('Ranthan Kharak Trek','₹12,000')">
+
 📲 Book Now
+
 </button>
+
 </div>
+
 </div>
+
 
 
 <!-- DAYARA BUGYAL -->
+
 <div class="package-card">
-<img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1000&q=85" alt="Dayara Bugyal Trek">
+
+<img
+src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=90"
+alt="Dayara Bugyal Trek">
+
 
 <div class="package-content">
-<h3>🏔️ Dayara Bugyal Trek</h3>
-<p>Explore beautiful Himalayan meadows and views.</p>
-<p class="price">₹8,500</p>
 
-<button class="btn" onclick="bookNow('Dayara Bugyal Trek','₹8,500')">
+<h3>
+🏔️ Dayara Bugyal Trek
+</h3>
+
+<p>
+
+Walk across beautiful Himalayan meadows and enjoy
+spectacular mountain views on an unforgettable adventure.
+
+</p>
+
+<p class="price">
+₹8,500
+</p>
+
+
+<button
+class="btn"
+onclick="bookNow('Dayara Bugyal Trek','₹8,500')">
+
 📲 Book Now
+
 </button>
+
 </div>
+
 </div>
+
 
 
 <!-- PINDARI GLACIER -->
+
 <div class="package-card">
-<img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1000&q=85" alt="Pindari Glacier Trek">
+
+<img
+src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1200&q=90"
+alt="Pindari Glacier Trek">
+
 
 <div class="package-content">
-<h3>🏔️ Pindari Glacier Trek</h3>
-<p>Experience an unforgettable Himalayan adventure.</p>
-<p class="price">₹11,000</p>
 
-<button class="btn" onclick="bookNow('Pindari Glacier Trek','₹11,000')">
+<h3>
+🏔️ Pindari Glacier Trek
+</h3>
+
+<p>
+
+Take on an unforgettable Himalayan adventure and
+experience spectacular mountain landscapes.
+
+</p>
+
+<p class="price">
+₹11,000
+</p>
+
+
+<button
+class="btn"
+onclick="bookNow('Pindari Glacier Trek','₹11,000')">
+
 📲 Book Now
+
 </button>
+
 </div>
+
 </div>
+
 
 
 <!-- BALI PASS -->
+
 <div class="package-card">
-<img src="https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1000&q=85" alt="Bali Pass Trek">
+
+<img
+src="https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1200&q=90"
+alt="Bali Pass Trek">
+
 
 <div class="package-content">
-<h3>🏔️ Bali Pass Trek</h3>
-<p>A challenging and memorable Himalayan adventure.</p>
-<p class="price">₹17,000</p>
 
-<button class="btn" onclick="bookNow('Bali Pass Trek','₹17,000')">
+<h3>
+🏔️ Bali Pass Trek
+</h3>
+
+<p>
+
+A challenging Himalayan adventure for trekkers looking
+for spectacular landscapes and an unforgettable journey.
+
+</p>
+
+<p class="price">
+₹17,000
+</p>
+
+
+<button
+class="btn"
+onclick="bookNow('Bali Pass Trek','₹17,000')">
+
 📲 Book Now
+
 </button>
+
 </div>
+
 </div>
+
 
 
 <!-- RUPIN PASS -->
+
 <div class="package-card">
-<img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1000&q=85" alt="Rupin Pass Trek">
+
+<img
+src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=90"
+alt="Rupin Pass Trek">
+
 
 <div class="package-content">
-<h3>🏔️ Rupin Pass Trek</h3>
-<p>Explore spectacular mountain landscapes.</p>
-<p class="price">₹17,000</p>
 
-<button class="btn" onclick="bookNow('Rupin Pass Trek','₹17,000')">
+<h3>
+🏔️ Rupin Pass Trek
+</h3>
+
+<p>
+
+Discover spectacular Himalayan landscapes and enjoy
+an adventurous trek filled with unforgettable moments.
+
+</p>
+
+<p class="price">
+₹17,000
+</p>
+
+
+<button
+class="btn"
+onclick="bookNow('Rupin Pass Trek','₹17,000')">
+
 📲 Book Now
+
 </button>
+
 </div>
+
 </div>
+
 
 
 <!-- FULARA RIDGE -->
+
 <div class="package-card">
-<img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1000&q=85" alt="Fulara Ridge Trek">
+
+<img
+src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1200&q=90"
+alt="Fulara Ridge Trek">
+
 
 <div class="package-content">
-<h3>🏔️ Fulara Ridge Trek</h3>
-<p>Enjoy stunning Himalayan ridge landscapes.</p>
-<p class="price">₹9,500</p>
 
-<button class="btn" onclick="bookNow('Fulara Ridge Trek','₹9,500')">
+<h3>
+🏔️ Fulara Ridge Trek
+</h3>
+
+<p>
+
+Walk along beautiful Himalayan ridges and experience
+stunning mountain views and peaceful landscapes.
+
+</p>
+
+<p class="price">
+₹9,500
+</p>
+
+
+<button
+class="btn"
+onclick="bookNow('Fulara Ridge Trek','₹9,500')">
+
 📲 Book Now
+
 </button>
+
 </div>
+
 </div>
 
 
 </div>
+
 </div>
+
 </section>
 
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section
+class="contact"
+id="contact">
 
 <div class="container">
 
+
 <div class="section-title">
-<h2>Contact Us</h2>
+
+<h2>
+Contact Us
+</h2>
+
 <p style="color:#c8d9d3;">
-Plan your next journey with Trip of Hills.
+
+Ready for your next mountain adventure?
+
+Let's plan it together.
+
 </p>
+
 </div>
+
 
 <div class="contact-grid">
 
+
 <div class="contact-info">
 
-<h3>Trip of Hills</h3>
 
-<p>📍 Uttarakhand, India</p>
-<p>📞 +91 6398095746</p>
-<p>📞 +91 7668939046</p>
-<p>📧 tripofhills6398@gmail.com</p>
-<p>🏔️ Trekking • Travel • Trips</p>
+<h3>
+Trip of Hills
+</h3>
+
+
+<p>
+📍 Uttarakhand, India
+</p>
+
+<p>
+📞 +91 6398095746
+</p>
+
+<p>
+📞 +91 7668939046
+</p>
+
+<p>
+📧 tripofhills6398@gmail.com
+</p>
+
+<p>
+🏔️ Trekking • Travel • Trips
+</p>
+
+
+<div class="contact-note">
+
+<strong>
+🌄 Let's create your next mountain story.
+</strong>
+
+<br><br>
+
+Tell us where you want to go, how many people
+are travelling and when you want to start.
+We'll help you plan your adventure.
+
+</div>
+
 
 <a
 href="https://wa.me/916398095746?text=Hello%20Trip%20of%20Hills,%20I%20want%20to%20plan%20a%20trip."
 target="_blank"
 class="btn">
+
 💬 Chat on WhatsApp
+
 </a>
+
 
 </div>
 
 
-<form onsubmit="sendMessage(event)">
+
+<form
+onsubmit="sendMessage(event)">
+
 
 <input
 type="text"
@@ -700,96 +1690,124 @@ id="name"
 placeholder="Your Name"
 required>
 
+
 <input
 type="tel"
 id="phone"
 placeholder="Phone Number"
 required>
 
+
 <textarea
 id="message"
 placeholder="Tell us about your trip..."
 required></textarea>
 
-<button class="btn" type="submit">
+
+<button
+class="btn"
+type="submit">
+
 📲 Send Enquiry
+
 </button>
+
 
 </form>
 
+
 </div>
+
 </div>
+
 </section>
 
 
-<!-- FOOTER -->
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
-© 2026 Trip of Hills. All Rights Reserved.
+
+© 2026 Trip of Hills.
+All Rights Reserved.
+
+<br>
+
+Trekking • Travel • Explore • Experience
+
 </footer>
 
 
-<!-- FLOATING WHATSAPP -->
+
+<!-- =========================
+     FLOATING WHATSAPP
+========================= -->
+
 <a
 class="whatsapp"
 href="https://wa.me/916398095746?text=Hello%20Trip%20of%20Hills,%20I%20want%20to%20know%20about%20your%20packages."
 target="_blank"
 title="Chat on WhatsApp">
+
 💬
+
 </a>
 
 
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
 <script>
+
 
 function bookNow(packageName, price){
 
   const message =
-  "Hello Trip of Hills,%0A%0A" +
-  "I want to book: " +
-  encodeURIComponent(packageName) +
-  "%0A" +
-  "Package Price: " +
-  encodeURIComponent(price) +
-  "%0A%0A" +
-  "Please send me the booking details.";
+
+    "Hello Trip of Hills,%0A%0A" +
+
+    "I want to book: " +
+
+    encodeURIComponent(packageName) +
+
+    "%0A" +
+
+    "Package Price: " +
+
+    encodeURIComponent(price) +
+
+    "%0A%0A" +
+
+    "Please send me the booking details.";
 
   window.open(
-    "https://wa.me/916398095746?text=" + message,
+
+    "https://wa.me/916398095746?text=" +
+    message,
+
     "_blank"
+
   );
+
 }
+
 
 
 function sendMessage(event){
 
   event.preventDefault();
 
+
   const name =
-  document.getElementById("name").value.trim();
 
-  const phone =
-  document.getElementById("phone").value.trim();
+    document
+    .getElementById("name")
+    .value
+    .trim();
 
-  const message =
-  document.getElementById("message").value.trim();
 
-  const text =
-  "Hello Trip of Hills,%0A%0A" +
-  "Name: " +
-  encodeURIComponent(name) +
-  "%0A" +
-  "Phone: " +
-  encodeURIComponent(phone) +
-  "%0A" +
-  "Trip Details: " +
-  encodeURIComponent(message);
-
-  window.open(
-    "https://wa.me/916398095746?text=" + text,
-    "_blank"
-  );
-}
-
-</script>
-
-</body>
-</html>
+  
