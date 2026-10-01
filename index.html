@@ -34,51 +34,22 @@ header{
 nav{
   max-width:1150px;
   margin:auto;
-  padding:12px 18px;
+  padding:8px 18px;
   display:flex;
   justify-content:space-between;
   align-items:center;
 }
 
 .logo{
-  color:white;
-  text-decoration:none;
-  font-size:20px;
-  font-weight:bold;
   display:flex;
   align-items:center;
-  gap:8px;
+  text-decoration:none;
 }
 
-.logo-icon{
-  width:38px;
-  height:32px;
-  position:relative;
-  display:inline-block;
-}
-
-.logo-icon:before{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:2px;
-  border-left:19px solid transparent;
-  border-right:19px solid transparent;
-  border-bottom:30px solid #55c985;
-}
-
-.logo-icon:after{
-  content:"";
-  position:absolute;
-  left:11px;
-  bottom:2px;
-  border-left:8px solid transparent;
-  border-right:8px solid transparent;
-  border-bottom:18px solid white;
-}
-
-.logo span{
-  color:#65d18c;
+.logo img{
+  width:125px;
+  height:auto;
+  display:block;
 }
 
 nav ul{
@@ -120,7 +91,6 @@ nav ul a:hover{
 .hero h1{
   font-size:58px;
   margin-bottom:15px;
-  letter-spacing:1px;
 }
 
 .hero h1 span{
@@ -220,11 +190,6 @@ section{
   border-radius:18px;
   text-align:center;
   box-shadow:0 8px 25px rgba(0,0,0,.08);
-  transition:.25s;
-}
-
-.card:hover{
-  transform:translateY(-5px);
 }
 
 .icon{
@@ -313,7 +278,7 @@ form textarea{
   resize:vertical;
 }
 
-/* WHATSAPP FLOATING BUTTON */
+/* WHATSAPP */
 .whatsapp{
   position:fixed;
   right:20px;
@@ -329,7 +294,6 @@ form textarea{
   font-size:27px;
   text-decoration:none;
   z-index:999;
-  box-shadow:0 5px 20px rgba(0,0,0,.3);
 }
 
 /* FOOTER */
@@ -345,17 +309,11 @@ footer{
 @media(max-width:800px){
 
   nav{
-    padding:10px 12px;
+    padding:7px 10px;
   }
 
-  .logo{
-    font-size:16px;
-  }
-
-  .logo-icon{
-    transform:scale(.8);
-    transform-origin:left center;
-    margin-right:-5px;
+  .logo img{
+    width:105px;
   }
 
   nav ul{
@@ -396,14 +354,12 @@ footer{
 
 <body>
 
-
 <!-- NAVBAR -->
 <header>
 <nav>
 
 <a href="#home" class="logo">
-  <span class="logo-icon"></span>
-  Trip <span>of Hills</span>
+  <img src="trip-of-hills-logo.png" alt="Trip of Hills Logo">
 </a>
 
 <ul>
@@ -480,7 +436,6 @@ Explore Packages
 </a>
 
 </div>
-
 </div>
 </div>
 </section>
@@ -536,207 +491,144 @@ Explore Packages
 
 <!-- KEDARKANTHA -->
 <div class="package-card">
-
-<img
-src="https://images.unsplash.com/photo-1486911278844-a81c5267e227?auto=format&fit=crop&w=1000&q=85"
-alt="Kedarkantha Trek">
+<img src="https://images.unsplash.com/photo-1486911278844-a81c5267e227?auto=format&fit=crop&w=1000&q=85" alt="Kedarkantha Trek">
 
 <div class="package-content">
-
 <h3>🏔️ Kedarkantha Trek</h3>
-
 <p>Experience the beauty of the Himalayas.</p>
-
 <p class="price">₹9,000</p>
 
-<a href="javascript:bookNow('Kedarkantha Trek','₹9,000')" class="btn">
+<button class="btn" onclick="bookNow('Kedarkantha Trek','₹9,000')">
 📲 Book Now
-</a>
-
+</button>
 </div>
 </div>
 
 
 <!-- HAR KI DUN -->
 <div class="package-card">
-
-<img
-src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=85"
-alt="Har Ki Dun Trek">
+<img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=85" alt="Har Ki Dun Trek">
 
 <div class="package-content">
-
 <h3>🏔️ Har Ki Dun Trek</h3>
-
 <p>Explore the beautiful Har Ki Dun valley.</p>
-
 <p class="price">₹11,000</p>
 
-<a href="javascript:bookNow('Har Ki Dun Trek','₹11,000')" class="btn">
+<button class="btn" onclick="bookNow('Har Ki Dun Trek','₹11,000')">
 📲 Book Now
-</a>
-
+</button>
 </div>
 </div>
 
 
 <!-- GULABI KANTHA -->
 <div class="package-card">
-
-<img
-src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1000&q=85"
-alt="Gulabi Kantha Trek">
+<img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1000&q=85" alt="Gulabi Kantha Trek">
 
 <div class="package-content">
-
 <h3>🌸 Gulabi Kantha Trek</h3>
-
 <p>Enjoy a beautiful Himalayan trekking experience.</p>
-
 <p class="price">₹9,000</p>
 
-<a href="javascript:bookNow('Gulabi Kantha Trek','₹9,000')" class="btn">
+<button class="btn" onclick="bookNow('Gulabi Kantha Trek','₹9,000')">
 📲 Book Now
-</a>
-
+</button>
 </div>
 </div>
 
 
 <!-- RANTHAN KHARAK -->
 <div class="package-card">
-
-<img
-src="https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1000&q=85"
-alt="Ranthan Kharak Trek">
+<img src="https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1000&q=85" alt="Ranthan Kharak Trek">
 
 <div class="package-content">
-
 <h3>🏔️ Ranthan Kharak Trek</h3>
-
 <p>Discover peaceful Himalayan landscapes.</p>
-
 <p class="price">₹12,000</p>
 
-<a href="javascript:bookNow('Ranthan Kharak Trek','₹12,000')" class="btn">
+<button class="btn" onclick="bookNow('Ranthan Kharak Trek','₹12,000')">
 📲 Book Now
-</a>
-
+</button>
 </div>
 </div>
 
 
 <!-- DAYARA BUGYAL -->
 <div class="package-card">
-
-<img
-src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1000&q=85"
-alt="Dayara Bugyal Trek">
+<img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1000&q=85" alt="Dayara Bugyal Trek">
 
 <div class="package-content">
-
 <h3>🏔️ Dayara Bugyal Trek</h3>
-
 <p>Explore beautiful Himalayan meadows and views.</p>
-
 <p class="price">₹8,500</p>
 
-<a href="javascript:bookNow('Dayara Bugyal Trek','₹8,500')" class="btn">
+<button class="btn" onclick="bookNow('Dayara Bugyal Trek','₹8,500')">
 📲 Book Now
-</a>
-
+</button>
 </div>
 </div>
 
 
 <!-- PINDARI GLACIER -->
 <div class="package-card">
-
-<img
-src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1000&q=85"
-alt="Pindari Glacier Trek">
+<img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1000&q=85" alt="Pindari Glacier Trek">
 
 <div class="package-content">
-
 <h3>🏔️ Pindari Glacier Trek</h3>
-
 <p>Experience an unforgettable Himalayan adventure.</p>
-
 <p class="price">₹11,000</p>
 
-<a href="javascript:bookNow('Pindari Glacier Trek','₹11,000')" class="btn">
+<button class="btn" onclick="bookNow('Pindari Glacier Trek','₹11,000')">
 📲 Book Now
-</a>
-
+</button>
 </div>
 </div>
 
 
 <!-- BALI PASS -->
 <div class="package-card">
-
-<img
-src="https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1000&q=85"
-alt="Bali Pass Trek">
+<img src="https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1000&q=85" alt="Bali Pass Trek">
 
 <div class="package-content">
-
 <h3>🏔️ Bali Pass Trek</h3>
-
 <p>A challenging and memorable Himalayan adventure.</p>
-
 <p class="price">₹17,000</p>
 
-<a href="javascript:bookNow('Bali Pass Trek','₹17,000')" class="btn">
+<button class="btn" onclick="bookNow('Bali Pass Trek','₹17,000')">
 📲 Book Now
-</a>
-
+</button>
 </div>
 </div>
 
 
 <!-- RUPIN PASS -->
 <div class="package-card">
-
-<img
-src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1000&q=85"
-alt="Rupin Pass Trek">
+<img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1000&q=85" alt="Rupin Pass Trek">
 
 <div class="package-content">
-
 <h3>🏔️ Rupin Pass Trek</h3>
-
 <p>Explore spectacular mountain landscapes.</p>
-
 <p class="price">₹17,000</p>
 
-<a href="javascript:bookNow('Rupin Pass Trek','₹17,000')" class="btn">
+<button class="btn" onclick="bookNow('Rupin Pass Trek','₹17,000')">
 📲 Book Now
-</a>
-
+</button>
 </div>
 </div>
 
 
 <!-- FULARA RIDGE -->
 <div class="package-card">
-
-<img
-src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1000&q=85"
-alt="Fulara Ridge Trek">
+<img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1000&q=85" alt="Fulara Ridge Trek">
 
 <div class="package-content">
-
 <h3>🏔️ Fulara Ridge Trek</h3>
-
 <p>Enjoy stunning Himalayan ridge landscapes.</p>
-
 <p class="price">₹9,500</p>
 
-<a href="javascript:bookNow('Fulara Ridge Trek','₹9,500')" class="btn">
+<button class="btn" onclick="bookNow('Fulara Ridge Trek','₹9,500')">
 📲 Book Now
-</a>
-
+</button>
 </div>
 </div>
 
@@ -753,7 +645,6 @@ alt="Fulara Ridge Trek">
 
 <div class="section-title">
 <h2>Contact Us</h2>
-
 <p style="color:#c8d9d3;">
 Plan your next journey with Trip of Hills.
 </p>
@@ -766,11 +657,9 @@ Plan your next journey with Trip of Hills.
 <h3>Trip of Hills</h3>
 
 <p>📍 Uttarakhand, India</p>
-
 <p>📞 +91 6398095746</p>
-
+<p>📞 +91 7668939046</p>
 <p>📧 tripofhills6398@gmail.com</p>
-
 <p>🏔️ Trekking • Travel • Trips</p>
 
 <a
@@ -815,9 +704,7 @@ required></textarea>
 
 <!-- FOOTER -->
 <footer>
-
 © 2026 Trip of Hills. All Rights Reserved.
-
 </footer>
 
 
@@ -827,24 +714,20 @@ class="whatsapp"
 href="https://wa.me/916398095746?text=Hello%20Trip%20of%20Hills,%20I%20want%20to%20know%20about%20your%20packages."
 target="_blank"
 title="Chat on WhatsApp">
-
 💬
-
 </a>
 
 
 <script>
 
-/* BOOK NOW → WHATSAPP */
-
 function bookNow(packageName, price){
 
   const message =
   "Hello Trip of Hills,%0A%0A" +
-  "I want to book:%20" +
+  "I want to book: " +
   encodeURIComponent(packageName) +
   "%0A" +
-  "Package Price:%20" +
+  "Package Price: " +
   encodeURIComponent(price) +
   "%0A%0A" +
   "Please send me the booking details.";
@@ -855,8 +738,6 @@ function bookNow(packageName, price){
   );
 }
 
-
-/* CONTACT FORM → WHATSAPP */
 
 function sendMessage(event){
 
